@@ -1,0 +1,25 @@
+cp YSS /usr/bin/YSS
+rm -rf /usr/local/bin/YSS_files
+mkdir /usr/local/bin/YSS_files
+cp chper /bin/chper
+cp builtins.h /usr/local/bin/YSS_files/builtins.h
+cp colors.h /usr/local/bin/YSS_files/colors.h
+cp command.h /usr/local/bin/YSS_files/command.h
+cp execute.h /usr/local/bin/YSS_files/execute.h
+cp init.h /usr/local/bin/YSS_files/init.h
+cp input.h /usr/local/bin/YSS_files/input.h
+cp prompt.h /usr/local/bin/YSS_files/prompt.h
+cp save.h /usr/local/bin/YSS_files/save.h
+cp strmode.h /usr/local/bin/YSS_files/strmode.h
+cp trim.h /usr/local/bin/YSS_files/trim.h
+cp .aliases ~/.aliases
+cp .commands ~/.commands
+
+chown $SUDO_USER ~/.aliases
+chown $SUDO_USER ~/.commands
+
+if ! grep -q /usr/bin/YSS "/etc/shells"; 
+then
+echo /usr/bin/YSS >> /etc/shells
+fi
+

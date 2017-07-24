@@ -1,0 +1,3 @@
+lex YSS.l
+yacc -d YSS.y
+gcc lex.yy.c y.tab.c -lm -o YSS 

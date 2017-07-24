@@ -1,0 +1,12 @@
+rm /usr/bin/YSS
+rm -rf /usr/local/bin/YSS_files
+rm ~/.aliases
+rm ~/.commands
+rm /bin/chper
+
+if ! grep -q /usr/bin/YSS "/etc/shells"; 
+then
+awk '!/YSS/' /etc/shells > temp && mv temp /etc/shells 
+#echo /usr/bin/YSS >> /etc/shells
+fi
+
